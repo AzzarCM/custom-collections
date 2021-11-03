@@ -20,7 +20,7 @@ public class MyPriorityQueue<E> implements MethodDAO<E> {
 
     @Override
     public void update(int key, E item) {
-        System.out.println("PRIORITY QUEUE CANNOT DO THAT :( ");
+        throw new IllegalArgumentException("priorityQueue cannot be updated");
     }
 
     @Override

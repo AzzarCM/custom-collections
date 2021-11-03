@@ -1,7 +1,6 @@
 package com.cmundo.methods;
 
 import com.cmundo.dao.MethodDAO;
-
 import java.util.HashSet;
 
 public class MyHashSet<E> implements MethodDAO<E> {
@@ -20,7 +19,7 @@ public class MyHashSet<E> implements MethodDAO<E> {
 
     @Override
     public void update(int key, E item) {
-        System.out.println("A HASHSET CANNOT BE UPDATED :(");
+       throw new IllegalArgumentException("Hash set cannot be updated");
     }
 
     @Override

@@ -20,7 +20,7 @@ public class MyLinkedHashSet<E> implements MethodDAO<E> {
 
     @Override
     public void update(int key, E item) {
-        System.out.println("A LINKED HASHSET CANNOT BE UPDATED :(");
+        throw new IllegalArgumentException("linked HashSet cannot be updated");
     }
 
     @Override

@@ -20,6 +20,10 @@ public class Main {
         MyVector<Person> vector = new MyVector<>();
         MyLinkedList<Person> linkedList = new MyLinkedList<>();
         MyPriorityQueue<Person> priorityQueue = new MyPriorityQueue<>();
+        MyHashTable<Integer, Person> hashTable = new MyHashTable<>();
+        MyHashMap<Integer,Person> hashMap = new MyHashMap<>();
+        MyLinkedHashMap<Integer, Person> linkedHashMap = new MyLinkedHashMap<>();
+        MyTreeMap<Integer,Person> treeMap = new MyTreeMap<>();
 
         /* Running cases ... */
         System.out.println("**************************************");
@@ -61,7 +65,8 @@ public class Main {
         System.out.println("******* ITERATING TREE SET *******");
         treeSet.iterate();
         treeSet.remove();
-        System.out.println("******* TREE SET AFTER REMOVING FIRST ELEMENT *******");
+        treeSet.remove(karen);
+        System.out.println("******* TREE SET AFTER REMOVING FIRST ELEMENT 'CRISTIAN' and object 'KAREN' *******");
         treeSet.iterate();
         System.out.println();
 
@@ -137,18 +142,65 @@ public class Main {
         System.out.println("**************************************");
         System.out.println("********      HASH TABLE      ********");
         System.out.println("**************************************");
+        hashTable.addOrUpdate(100, cristian);
+        hashTable.addOrUpdate(200,rudi);
+        hashTable.addOrUpdate(300, alejandra);
+        hashTable.addOrUpdate(400,karen);
+        System.out.println("***** ITERATING THE HASH TABLE *******");
+        hashTable.iterate();
+        hashTable.addOrUpdate(200, new Person(21, "David", "Vallecios", 21));
+        System.out.println("**** UPDATING HASH TABLE 'KEY 200' ");
+        hashTable.iterate();
+        hashTable.remove(100, cristian);
+        System.out.println("*** REMOVING 'CRISTIAN' FROM TABLE ");
+        hashTable.iterate();
+        System.out.println();
 
         System.out.println("**************************************");
         System.out.println("********       HASH MAP       ********");
         System.out.println("**************************************");
+        hashMap.addOrUpdate(100, cristian);
+        hashMap.addOrUpdate(200, rudi);
+        hashMap.addOrUpdate(300, alejandra);
+        hashMap.addOrUpdate(400, karen);
+        System.out.println("*** ITERATING HAS MAP ****");
+        hashMap.iterate();
+        hashMap.remove(200, rudi);
+        hashMap.addOrUpdate(300, new Person(3, "Danniela", "Renderos", 25));
+        System.out.println("*** HASH MAP AFTER REMOVING 'RUDI' AND UPDATING KEY #300");
+        hashMap.iterate();
+        System.out.println();
+
 
         System.out.println("**************************************");
         System.out.println("******     LINKED HASH MAP      ******");
         System.out.println("**************************************");
+        linkedHashMap.addOrUpdate(100, cristian);
+        linkedHashMap.addOrUpdate(200, rudi);
+        linkedHashMap.addOrUpdate(300, alejandra);
+        linkedHashMap.addOrUpdate(400, karen);
+        System.out.println("*** ITERATING LINKED HASH MAP ***");
+        linkedHashMap.iterate();
+        linkedHashMap.remove(100, cristian);
+        linkedHashMap.addOrUpdate(400, new Person(4, "Vanessa", "Perez", 22));
+        System.out.println("*** LINKED HASHMAP AFTER REMOVING 'CRISTIAN' AND UPDATING KEY #400");
+        linkedHashMap.iterate();
+        System.out.println();
 
         System.out.println("**************************************");
         System.out.println("********       TREE MAP       ********");
         System.out.println("**************************************");
+        treeMap.addOrUpdate(100, cristian);
+        treeMap.addOrUpdate(200, rudi);
+        treeMap.addOrUpdate(300, alejandra);
+        treeMap.addOrUpdate(400, karen);
+        System.out.println("*** ITERATING TREE MAP ***");
+        treeMap.iterate();
+        treeMap.remove(200, rudi);
+        treeMap.addOrUpdate(100, new Person(1, "Alexander", "Orellana", 23));
+        System.out.println("*** TREE MAP AFTER REMOVING 'RUDI' AND UPDATING KEY #100");
+        treeMap.iterate();
+        System.out.println();
 
 
 

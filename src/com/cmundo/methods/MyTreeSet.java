@@ -14,12 +14,12 @@ public class MyTreeSet<E> implements MethodDAO<E>{
 
     @Override
     public void remove(E item) {
-
+        set.remove(item);
     }
 
     @Override
     public void update(int key, E item) {
-
+        throw new IllegalArgumentException("Tree set cannot be updated");
     }
 
     @Override
